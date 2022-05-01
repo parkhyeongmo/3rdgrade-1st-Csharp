@@ -8,24 +8,26 @@
     "net5.0": []
   },
   "packageFolders": {
-    "/Users/parkhyeongmo/.nuget/packages/": {}
+    "C:\\Users\\박형모\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/parkhyeongmo/Projects/17011492/17011492/17011492.csproj",
-      "projectName": "17011492",
-      "projectPath": "/Users/parkhyeongmo/Projects/17011492/17011492/17011492.csproj",
-      "packagesPath": "/Users/parkhyeongmo/.nuget/packages/",
-      "outputPath": "/Users/parkhyeongmo/Projects/17011492/17011492/obj/",
+      "projectUniqueName": "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj",
+      "projectName": "17011492_HW1",
+      "projectPath": "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj",
+      "packagesPath": "C:\\Users\\박형모\\.nuget\\packages\\",
+      "outputPath": "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/parkhyeongmo/.config/NuGet/NuGet.Config"
+        "C:\\Users\\박형모\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.104/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
       }
     }
   }

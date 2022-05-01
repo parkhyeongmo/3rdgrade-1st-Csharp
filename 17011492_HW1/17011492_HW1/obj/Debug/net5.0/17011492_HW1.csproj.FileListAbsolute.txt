@@ -1,0 +1,16 @@
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\17011492_HW1.exe
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\17011492_HW1.deps.json
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\17011492_HW1.runtimeconfig.json
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\17011492_HW1.runtimeconfig.dev.json
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\17011492_HW1.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\ref\17011492_HW1.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\bin\Debug\net5.0\17011492_HW1.pdb
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.csproj.AssemblyReference.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.AssemblyInfoInputs.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.AssemblyInfo.cs
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.csproj.CoreCompileInputs.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\ref\17011492_HW1.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.pdb
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제1\C샵 프로그래밍 1차 과제\17011492_HW1\17011492_HW1\obj\Debug\net5.0\17011492_HW1.genruntimeconfig.cache

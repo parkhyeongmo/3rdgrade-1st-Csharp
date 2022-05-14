@@ -1,0 +1,15 @@
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/bin/Debug/net5.0/17011492_HW2.deps.json
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/bin/Debug/net5.0/17011492_HW2.runtimeconfig.json
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/bin/Debug/net5.0/17011492_HW2.runtimeconfig.dev.json
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/bin/Debug/net5.0/17011492_HW2.dll
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/bin/Debug/net5.0/ref/17011492_HW2.dll
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/bin/Debug/net5.0/17011492_HW2.pdb
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.csproj.AssemblyReference.cache
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.AssemblyInfoInputs.cache
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.AssemblyInfo.cs
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.csproj.CoreCompileInputs.cache
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.dll
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/ref/17011492_HW2.dll
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.pdb
+/Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.genruntimeconfig.cache

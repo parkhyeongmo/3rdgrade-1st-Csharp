@@ -13,3 +13,19 @@
 /Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/ref/17011492_HW2.dll
 /Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.pdb
 /Users/parkhyeongmo/Projects/17011492_HW2/17011492_HW2/obj/Debug/net5.0/17011492_HW2.genruntimeconfig.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\17011492_HW2.exe
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\17011492_HW2.deps.json
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\17011492_HW2.runtimeconfig.json
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\17011492_HW2.runtimeconfig.dev.json
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\17011492_HW2.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\ref\17011492_HW2.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\bin\Debug\net5.0\17011492_HW2.pdb
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.csproj.AssemblyReference.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.AssemblyInfoInputs.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.AssemblyInfo.cs
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.csproj.CoreCompileInputs.cache
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\ref\17011492_HW2.dll
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.pdb
+D:\Google drive\수업자료\3-1\C#프로그래밍\과제2\17011492_HW2\17011492_HW2\obj\Debug\net5.0\17011492_HW2.genruntimeconfig.cache

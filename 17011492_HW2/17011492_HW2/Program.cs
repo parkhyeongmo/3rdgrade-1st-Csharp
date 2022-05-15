@@ -21,6 +21,10 @@ namespace _17011492_HW2
             return vehicleId;
         }
 
+        public int GetPrio() { // 우선순위를 반환해주는 메소드
+            return priority;
+        }
+
         public override string ToString() { // 자동차 정보를 문자열로 반환하는 메소드
 
             return $"FNUM: {vehicleId} DEST: {destination} PRIO: {priority}";
@@ -34,9 +38,9 @@ namespace _17011492_HW2
         private int waitId, numVehicle; // 대기장소ID, 보관중인 자동차 개수
         private DeliveryVehicle[] vehicles; // 대기장소에 있는 자동차 배열
 
-        public void SetWaitPlace(int Id, int num){ // 대기장소 객체 내부 정보 설정 메소드
+        public WaitPlace (int Id){ // 생성자, ID를 인자로 받는다.
             waitId = Id;
-            numVehicle = num;
+            numVehicle = 0; // 보관중인 자동차는 0대로 설정한다.
         }
 
         public int GetnumVehicle() { // 대기장소의 자동차 수 반환 메소드
@@ -48,10 +52,82 @@ namespace _17011492_HW2
             numVehicle++;
             Array.Resize(ref vehicles, numVehicle);
 
-            // 인자로 받은 자동차 객체를 우선순위를 고려하여 배열에 삽입
+            int new_prio = vehicle.GetPrio();
 
+            if (numVehicle == 1) { // 최초 배정된 자동차는 바로 배열에 투입한다.
+                vehicles[0] = vehicle;
+                return $"Vehicle {vehicle.GetId()} assigned to WaitPlace #{waitId}"; // 작동 결과 문자열로 반환
+            }
 
-            return $"Vehicle {vehicle.GetId()} assigned to waitPlace #{waitId}"; // 작동 결과 문자열로 반환
+            int i;
+
+            for (i = 0; i < vehicles.Length - 1; i++) { // 우선순위를 고려하여 투입될 배열의 위치를 탐색한다.
+                if (vehicles[i].GetId() < vehicle.GetId())
+                    break;
+            }
+
+            for (int j = vehicles.Length - 2; j >= i; j--) { // 해당 위치에 삽입하기 위해 기존 자동차들의 위치를 옮겨준다.
+
+                vehicles[j + 1] = vehicles[j];
+
+            }
+
+            vehicles[i] = vehicle; // 알맞은 순서의 위치에 자동차 객체 삽입     
+
+            return $"Vehicle {vehicle.GetId()} assigned to WaitPlace #{waitId}"; // 작동 결과 문자열로 반환
+
+        }
+
+        public int Deliver() { // 대기장소의 자동차들 중 우선순위가 가장 높은 자동차를 배달 보내는 메소드
+
+            int tmp = vehicles[0].GetId(); // 우선순위가 가장 높은 배열 맨 앞의 자동차Id를 미리 저장한다. 
+
+            for (int i = 0; i < vehicles.Length - 1; i++) { // 배열의 두 번째 자동차 객체부터 마지막 자동차 객체까지 모두 한 칸씩 당겨준다.
+                vehicles[i] = vehicles[i + 1];
+            }
+
+            Array.Resize(ref vehicles, numVehicle - 1); // 배열의 크기를 하나 줄여주고 자동차의 수도 하나 줄여준다.
+            numVehicle--;
+
+            return tmp; // 배달된 자동차의 ID를 반환한다.
+
+        }
+
+        public bool FindId(int search_id) { // 대기장소에 주어진 Id를 가진 자동차가 있는지 확인하는 메소드
+
+            if (numVehicle == 0) { // 대기중인 자동차가 없을 경우 false 반환
+                return false;
+            }
+
+            foreach (DeliveryVehicle i in vehicles) { // 자동차 배열을 탐색하며 해당 Id를 가진 자동차가 있다면 true 반환
+
+                if (i.GetId() == search_id)
+                    return true;
+            
+            }
+
+            return false; // 탐색 결과 발견되지 않으면 false 반환
+
+        }
+
+        public void Cancelation(int id) { // 대기장소에 주어진 Id를 가진 자동차를 삭제하는 메소드
+
+            int i;
+
+            for (i = 0; i < vehicles.Length; i++) { // 배열 내에서 해당 Id의 자동차 위치를 탐색
+                if (vehicles[i].GetId() == id) {
+                    break;
+                }
+            }
+
+            for (; i < vehicles.Length - 1; i++) { // 발견한 위치의 자동차를 제외하여 배열을 빈칸이 없도록 정렬해준다.
+
+                vehicles[i] = vehicles[i + 1];
+
+            }
+
+            Array.Resize(ref vehicles, numVehicle - 1); // 배열의 크기를 하나 줄여주고 자동차의 수도 하나 줄여준다.
+            numVehicle--;
 
         }
 
@@ -59,8 +135,10 @@ namespace _17011492_HW2
 
             sw.WriteLine(this.ToString());
 
-            foreach (DeliveryVehicle i in vehicles) {
-                sw.WriteLine(i.ToString());
+            if (numVehicle != 0) { // 대기중인 자동차가 있을 경우 정보 출력
+                for (int i = 0; i < vehicles.Length; i++) {
+                    sw.WriteLine(vehicles[i].ToString());
+                }
             }
 
         }
@@ -89,7 +167,7 @@ namespace _17011492_HW2
 
             for (int i = 0; i < num; i++) {
 
-                waitPlaces[i].SetWaitPlace(i + 1, 0); // 각 대기장소의 정보 초기화
+                waitPlaces[i] = new WaitPlace(i + 1); // 각 대기장소의 객체 생성
 
             }
 
@@ -99,6 +177,7 @@ namespace _17011492_HW2
         {
 
             DeliveryVehicle tmp = new DeliveryVehicle(vehicleId, destination, priority); // 자동차 객체 생성
+
             sw.WriteLine(waitPlaces[numWaitPlace - 1].Parking(tmp)); // 생성한 자동차 객체를 대기장소에 배정하고 반환받은 문자열 출력
 
         }
@@ -122,8 +201,8 @@ namespace _17011492_HW2
             }
 
             DeliveryVehicle tmp = new DeliveryVehicle(vehicleId, destination, priority); // 자동차 객체 생성
-            sw.WriteLine(waitPlaces[idx].Parking(tmp)); // 생성한 자동차 객체를 대기장소에 배정하고 반환받은 문자열 출력
 
+            sw.WriteLine(waitPlaces[idx].Parking(tmp)); // 생성한 자동차 객체를 대기장소에 배정하고 반환받은 문자열 출력
 
         }
 
@@ -133,24 +212,48 @@ namespace _17011492_HW2
 
             sw.WriteLine($"Number of WaitPlaces: {numWaitingPlaces}"); // 대기장소의 수 출력
 
-            sw.WriteLine("---------------------------------------------------");
-
             foreach (WaitPlace i in waitPlaces) { // 각 대기장소의 정보를 차례대로 출력
                 i.StatusWP(sw);
                 sw.WriteLine("---------------------------------------------------");
             }
 
-            sw.WriteLine("************************ End Delivery Vehicle Info ************************");
+            sw.WriteLine("********************** End Delivery Vehicle Info **********************");
 
         }
 
-        public void Clear(StreamWriter sw, string wait_num) { // Clear 명령 메소드
+        public void Cancel(StreamWriter sw, int cancel_id) { // Cancel 명령 메소드
 
-            int clear_idx = wait_num[1] - '0'; // 입력된 문자열로부터 대기장소의 index 저장
+            WaitPlace tmp;
 
-            waitPlaces[clear_idx].ClearPlace(); // 해당 대기장소의 전체 자동차 대기 취소
+            for (int i = 0; i < waitPlaces.Length; i++) { // 해당 Id를 가진 자동차를 찾아 각 대기장소를 탐색
+                
+                tmp = waitPlaces[i];
 
-            sw.WriteLine($"WaitPlace #{clear_idx} cleared."); // 작동결과 출력
+                if (tmp.FindId(cancel_id)) { // 발견 시 삭제 메소드 호출 후 결과 출력
+                    tmp.Cancelation(cancel_id); // 삭제 메소드
+                    sw.WriteLine($"Cancelation of Vehicle {cancel_id} completed.");
+                    return;
+                }
+
+            }           
+
+            sw.WriteLine($"Can't Find Vehicle {cancel_id}. Cancelation failed."); // 발견 실패 시 문구 출력
+
+        }
+
+        public void Deliver(StreamWriter sw, int waitId) { // Deliver 명령 메소드
+
+            int vehicleId = waitPlaces[waitId - 1].Deliver(); // 해당 대기장소에 Deliver 메소드 호출 후 배달 완료한 자동차ID 반환받음.
+
+            sw.WriteLine($"Vehicle {vehicleId} used to deliver."); // 결과 출력
+
+        }
+
+        public void Clear(StreamWriter sw, int waitId) { // Clear 명령 메소드
+
+            waitPlaces[waitId - 1].ClearPlace(); // 해당 대기장소의 전체 자동차 대기 취소
+
+            sw.WriteLine($"WaitPlace #{waitId} cleared."); // 작동결과 출력
 
         }
 
@@ -180,11 +283,10 @@ namespace _17011492_HW2
 
                 if (readperline[0].Equals("ReadyIn"))  // 명령에 따라 메소드 호출
                 {
-                    int place, id, priority;
-
-                    place = readperline[1][1] - '0';
-                    id = Int32.Parse(readperline[2]);
-                    priority = readperline[4][1] - '0';
+                    
+                    int place = Int32.Parse(readperline[1].Substring(1));
+                    int id = Int32.Parse(readperline[2]);
+                    int priority = Int32.Parse(readperline[4].Substring(1));
 
                     DVM.ReadyIn(sw, place, id, readperline[3], priority);
 
@@ -192,38 +294,43 @@ namespace _17011492_HW2
 
                 else if (readperline[0].Equals("Ready")) {
 
-                    int id, priority;
-
-                    id = Int32.Parse(readperline[1]);
-                    priority = readperline[3][1] - '0';
+                    int id = Int32.Parse(readperline[1]);
+                    int priority = Int32.Parse(readperline[3].Substring(1));
 
                     DVM.Ready(sw, id, readperline[2], priority);
-
 
                 }
 
                 else if (readperline[0].Equals("Status")) {
-                    DVM.Status(sw);
+
+                     DVM.Status(sw);
+
                 }
 
                 else if (readperline[0].Equals("Cancel")) {
 
-                    int id;
-
-                    id = Int32.Parse(readperline[1]);
-
-
+                    int id = Int32.Parse(readperline[1]);                    
+                    DVM.Cancel(sw, id);
 
                 }
 
-                else if (readperline[0].Equals("Deliver")) { }
+                else if (readperline[0].Equals("Deliver")) {
 
-                else if (readperline[0].Equals("Clear")) { }
+                    int id = Int32.Parse(readperline[1].Substring(1));
+                    DVM.Deliver(sw, id);
+
+                }
+
+                else if (readperline[0].Equals("Clear")) {
+
+                    int waitId = Int32.Parse(readperline[1].Substring(1));
+                    DVM.Clear(sw, waitId);
+
+                }
 
                 else if (readperline[0].Equals("Quit")) break;
 
             }
-
 
             sr.Close();
             sw.Close();

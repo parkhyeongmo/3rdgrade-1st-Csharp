@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj": {}
+    "E:\\Github\\3rdgrade-1st-Csharp\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj": {}
   },
   "projects": {
-    "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj": {
+    "E:\\Github\\3rdgrade-1st-Csharp\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj",
+        "projectUniqueName": "E:\\Github\\3rdgrade-1st-Csharp\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj",
         "projectName": "17011492_HW1",
-        "projectPath": "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj",
+        "projectPath": "E:\\Github\\3rdgrade-1st-Csharp\\17011492_HW1\\17011492_HW1\\17011492_HW1.csproj",
         "packagesPath": "C:\\Users\\박형모\\.nuget\\packages\\",
-        "outputPath": "E:\\Github\\3rdgrade-1st-Cshop\\17011492_HW1\\17011492_HW1\\obj\\",
+        "outputPath": "E:\\Github\\3rdgrade-1st-Csharp\\17011492_HW1\\17011492_HW1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\박형모\\AppData\\Roaming\\NuGet\\NuGet.Config",

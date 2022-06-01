@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Products>
+  <Product>
+    <Name>라면</Name>
+    <Price>3500</Price>
+  </Product>
+  <Product>
+    <Name>커피</Name>
+    <Price>2000</Price>
+  </Product>
+  <Product>
+    <Name>음료</Name>
+    <Price>1500</Price>
+  </Product>
+  <Product>
+    <Name>햄버거</Name>
+    <Price>2100</Price>
+  </Product>
+  <Product>
+    <Name>과자</Name>
+    <Price>1500</Price>
+  </Product>
+</Products>

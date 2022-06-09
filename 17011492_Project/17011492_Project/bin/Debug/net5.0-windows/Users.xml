@@ -4,7 +4,7 @@
 <User>
 <Id>1</Id>
 <Name>김민수</Name>
-<Charge>8000</Charge>
+<Charge>4001</Charge>
 </User>
 <User>
 <Id>2</Id>
@@ -19,7 +19,7 @@
 <User>
 <Id>4</Id>
 <Name>티라노</Name>
-<Charge>7400</Charge>
+<Charge>6400</Charge>
 </User>
 <User>
 <Id>5</Id>

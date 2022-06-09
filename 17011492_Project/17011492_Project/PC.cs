@@ -15,6 +15,6 @@ namespace _17011492
 
         public int UserId { get; set; }
         public string UserName { get; set; }
-        public string ChargeTime { get; set; } // 사용 등록된 시간
+        public int ChargeTime { get; set; } // 사용 등록된 시간, 초 단위
     }
 }

@@ -20,6 +20,7 @@ namespace _17011492_Project
                          
             dataGridView2.ReadOnly = true; // 각 정보를 dataGridView 폼에서 직접 수정이 불가능하도록 설정
             dataGridView3.ReadOnly = true;
+            timer1.Start();
 
             try // PCRoomControl의 객체 List 정보들을 프로그램에 출력
             {
@@ -66,6 +67,7 @@ namespace _17011492_Project
                 Product selected_Product = dataGridView2.CurrentRow.DataBoundItem as Product;
                 textBox3.Text = selected_Product.Name; // 선택된 상품의 정보를 textBox에 입력
                 textBox4.Text = selected_Product.Price.ToString();
+                
             }
 
             catch (Exception exception)
@@ -172,7 +174,7 @@ namespace _17011492_Project
                 pc.UserName = user.Name;
                 pc.inUse = true;
                 pc.Payment = "선불";
-                pc.ChargeTime = $"{time}시간";
+                pc.ChargeTime = time * 3600;
 
                 if (user.Id != 0) {
                     user.Charge -= cost;
@@ -212,7 +214,7 @@ namespace _17011492_Project
                 pc.Payment = "";
                 pc.UserId = 0;
                 pc.UserName = "";
-                pc.ChargeTime = "";
+                pc.ChargeTime = 0;
 
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = PCRoomControl.PCs;
@@ -225,6 +227,61 @@ namespace _17011492_Project
         private void button5_Click(object sender, EventArgs e) // 회원 Id를 0으로 설정해 비회원으로 시작할 수 있도록 함.
         {
             textBox2.Text = "0";
+        }
+
+        private void timer1_Tick(object sender, EventArgs e) // 타이머가 1초마다 수행하는 작업
+        {
+            foreach (PC pc in PCRoomControl.PCs) { // List의 모든 PC를 각각 제어
+
+                if (pc.ChargeTime > 0) // 잔여 시간이 있는 경우, 즉 PC가 사용중인 경우 1초마다 시간이 차감됨.
+                {
+                    pc.ChargeTime -= 1;
+
+                    if (pc.ChargeTime == 0) // 잔여 시간이 0이 되면 사용 종료 처리
+                    {
+                        pc.power = false;
+                        pc.inUse = false;
+                        pc.Payment = "";
+                        pc.UserId = 0;
+                        pc.UserName = "";
+                        pc.ChargeTime = 0;
+
+                        PCRoomControl.Save();
+
+                    }
+
+                }               
+
+            }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = PCRoomControl.PCs;
+            
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) // dataGridView1의 ChargeTime 부분을 시간 형식으로 출력
+        {
+            if (e.RowIndex != this.dataGridView1.NewRowIndex) {
+                if (e.ColumnIndex == 6) {
+                    int time = Int32.Parse(e.Value.ToString());
+                    string timeToString;
+
+                    timeToString = string.Format("{0:D2}:{1:D2}:{2:D2}", time / 3600, (time % 3600 / 60), (time % 3600 % 60));
+
+                    try
+                    {
+                        if (timeToString == "00:00:00") {
+                            e.Value = "";
+                        }
+                        else
+                            e.Value = timeToString;
+                    }
+                    catch 
+                    {
+                        e.Value = time;
+                    }
+                }
+            }
         }
     }   
 }

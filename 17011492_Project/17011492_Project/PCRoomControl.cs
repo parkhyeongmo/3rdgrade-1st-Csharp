@@ -45,8 +45,8 @@ namespace _17011492
                         Payment = item["Payment"].InnerText,
                         UserId = int.Parse(item["UserId"].InnerText),
                         UserName = item["UserName"].InnerText,
-                        ChargeTime = item["ChargeTime"].InnerText
-                    });
+                        ChargeTime = int.Parse(item["ChargeTime"].InnerText)
+                    }) ;
 
                 }
 

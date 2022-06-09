@@ -17,9 +17,10 @@ namespace _17011492_Project
         {
             InitializeComponent();
             Text = "세종 PC방";
-                         
+
             dataGridView2.ReadOnly = true; // 각 정보를 dataGridView 폼에서 직접 수정이 불가능하도록 설정
-            dataGridView3.ReadOnly = true;
+            dataGridView3.ReadOnly = true;           
+
             timer1.Start();
 
             try // PCRoomControl의 객체 List 정보들을 프로그램에 출력
@@ -37,7 +38,6 @@ namespace _17011492_Project
                 dataGridView1.Columns[5].ReadOnly = true;
                 dataGridView1.Columns[6].ReadOnly = true;
                 dataGridView1.Columns[7].ReadOnly = true;
-
             }
             catch (Exception exception) { }
 
@@ -256,7 +256,8 @@ namespace _17011492_Project
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = PCRoomControl.PCs;
-            
+
+            PCRoomControl.Save();
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) // dataGridView1의 ChargeTime 부분을 시간 형식으로 출력
